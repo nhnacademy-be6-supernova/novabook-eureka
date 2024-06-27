@@ -51,14 +51,14 @@ pipeline {
         }
         stage('Deploy to Front Server') {
             steps {
-                deployToServer(HOST_NAME, DEPLOY_PATH, 9777)
+                deployToServer(HOST_NAME, DEPLOY_PATH, 8761)
                 showLogs(HOST_NAME, DEPLOY_PATH)
             }
         }
 
         stage('Verification') {
             steps {
-                verifyDeployment(HOST_NAME, 9777)
+                verifyDeployment(HOST_NAME, 8761)
             }
         }
     }
