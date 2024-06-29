@@ -1,5 +1,4 @@
-
-name: Test
+name: maven 테스트
 
 on:
   pull_request:
