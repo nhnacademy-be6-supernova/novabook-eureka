@@ -43,5 +43,5 @@ jobs:
           script_stop: true
           script: |
             chmod 755 ./eureka/target/eureka-0.0.1-SNAPSHOT.jar
-            fuser -k 8090/tcp
+            fuser -k 8761/tcp
             ./eureka/startup.sh
