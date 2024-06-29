@@ -6,9 +6,17 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
-  build_main:
 
+jobs:
+  test: 
+      runs-on: ubuntu-latest  
+      steps:
+          - name: Build with Maven
+            run: mvn clean verify
+      
+
+  build:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -45,3 +53,5 @@ jobs:
             chmod 755 ./eureka/target/eureka-0.0.1-SNAPSHOT.jar
             fuser -k 8761/tcp
             ./eureka/startup.sh
+
+
