@@ -42,8 +42,8 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script_stop: true
           script: |
-            chmod 755 ~/eureka/target/eureka-0.0.1-SNAPSHOT.jar
+            chmod 755 ./eureka/target/eureka-0.0.1-SNAPSHOT.jar
             fuser -k 8761/tcp
-            ~/eureka/startup.sh
+            ./eureka/startup.sh
 
 
