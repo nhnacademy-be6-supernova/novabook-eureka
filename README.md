@@ -7,6 +7,9 @@ Novabook Eureka
 * Eureka는 이러한 미들웨어 역할을 수행하며, 연결된 서비스의 IP 주소, 포트, 그리고 InstanceId를 관리하고, RESTful 방식으로 작동합니다.
 
 
+서비스가 Eureka Server에 등록할 때, 자신의 상태를 주기적으로 업데이트하여 살아있음을 알립니다.
+Eureka Server는 다른 Eureka Client의 정보를 제공하며, 이 정보는 서비스의 로컬 캐시에 저장됩니다.
+이후, 각 서비스는 기본적으로 30초마다 Eureka Server에 Heartbeats 요청을 보내고, Eureka Server는 90초 이내에 Heartbeats를 받지 못하면 해당 Eureka Client의 등록 정보를 제거합니다.
 
 
 
